@@ -1,0 +1,12 @@
+body{
+    color: black;
+    background: white;
+    background-image: url('/images/SUBS.png');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+#file{
+    background-color: black !important;
+}

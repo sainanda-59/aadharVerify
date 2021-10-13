@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/project.css">
+    <style>
+        img{
+            width: 100%;
+        }
+    </style>
+    <link rel="stylesheet" href="/css/adminDash.css"
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 m-auto">
+                <h1 class="text-center">Admin Dash</h1>
+                <h3 class="text-center">Submissions</h3>
+                <% if(files){ %>
+                    <% files.forEach(function(file) { %>
+                      <div class="card card-body mb-3">
+                        <% if(file.isImage) { %>
+                          <%= file.filename %>
+                          <img src="image/<%= file.filename %>" alt="">
+                          <% } else { %>
+                            <%= file.filename %>
+                              <% } %>
+                              <form method="POST" action="/files/<%= file._id %>?_method=DELETE">
+                                <button class="btn form-control btn-danger btn-block mt-4">Delete</button>
+                              </form>
+                      </div>
+                      <% }) %>
+                        <% } else { %>
+                          <h4 class="text-center">No files to Show</h4>
+                          <% } %>
+            </div>
+        </div>
+    </div>
+   
+</body>
+</html>
