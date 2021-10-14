@@ -27,7 +27,7 @@ db.once('open', ()=>{
 });
 
 const storage = new GridFsStorage({
-    url: 'mongodb+srv://nirbhaya:nirbhaya@cluster0.9h2fo.mongodb.net/test',
+    url: 'mongodb+srv://sainanda:sainanda@cluster0.ky3bm.mongodb.net/test',
     file: (req, file) => {
       return new Promise((resolve, reject) => {
         crypto.randomBytes(16, (err, buf) => {
